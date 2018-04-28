@@ -1,0 +1,184 @@
+{
+"header":{
+    "productKey": "a1cB3Yjpr58",
+    "manufacture": "",
+    "protocol": "tcp/ip",
+    "description": ""
+},
+"properties":
+[
+    {
+        "identifier" : "bright",
+        "accessMode" : "rw",
+        "dataType":{
+            "type" : "int",
+            "specs":{
+			"max":"255",
+			"min":"0",
+			"unit":""
+			}
+		},
+        "desc" : "亮度"
+    },
+    {
+        "identifier" : "temprature",
+        "accessMode" : "rw",
+        "dataType":{
+            "type" : "int",
+            "specs":{
+			"max":"80",
+			"min":"0",
+			"unit":"℃"
+            }
+        },
+        "desc" : "环境温度"
+    },
+    {
+        "identifier" : "power",
+        "accessMode" : "rw",
+        "dataType":{
+            "type" : "enum",
+            "specs":{
+			"1":"开灯",
+			"0":"关灯"
+            }
+        },
+        "desc" : "电源"
+    }
+],
+"services":[
+    {
+        "identifier" : "set",
+        "inputData":[
+			    {
+			        "identifier" : "bright",
+			        "dataType":{
+			            "type" : "int",
+			            "specs":{
+						"max":"255",
+						"min":"0",
+						"unit":""
+						}
+					},
+			        "desc" : "亮度"
+			    },
+			    {
+			        "identifier" : "temprature",
+			        "dataType":{
+			            "type" : "int",
+			            "specs":{
+						"max":"80",
+						"min":"0",
+						"unit":"℃"
+			            }
+			        },
+			        "desc" : "环境温度"
+			    },
+			    {
+			        "identifier" : "power",
+			        "dataType":{
+			            "type" : "enum",
+			            "specs":{
+						"1":"开灯",
+						"0":"关灯"
+			            }
+			        },
+			        "desc" : "电源"
+			    }
+        ],
+        "outputData":[
+			{}
+        ],
+        "desc" : "设置属性"
+	},
+	{
+		"identifier" : "get",
+        "inputData":[
+            "bright",
+	    "temprature",
+	    "power"
+        ],
+        "outputData":[
+			    {
+			        "identifier" : "bright",
+			        "dataType":{
+			            "type" : "int",
+			            "specs":{
+						"max":"255",
+						"min":"0",
+						"unit":""
+						}
+					},
+			        "desc" : "亮度"
+			    },
+			    {
+			        "identifier" : "temprature",
+			        "dataType":{
+			            "type" : "int",
+			            "specs":{
+						"max":"80",
+						"min":"0",
+						"unit":"℃"
+			            }
+			        },
+			        "desc" : "环境温度"
+			    },
+			    {
+			        "identifier" : "power",
+			        "dataType":{
+			            "type" : "enum",
+			            "specs":{
+						"1":"开灯",
+						"0":"关灯"
+			            }
+			        },
+			        "desc" : "电源"
+			    }
+
+        ],
+        "desc" : "获取属性"
+	},
+	{
+		"identifier" : "breath",
+        "inputData":[
+			{
+				"identifier" : "threshold",
+				"dataType":{
+                    "type":"int",
+                    "specs":{
+					"max":"255",
+					"min":"0",
+					"unit":""
+                    }
+                },
+				"desc" : "亮度阈值"
+			}
+        ],
+        "outputData":[
+        ],
+        "desc" : "呼吸灯"
+	}
+],
+"events":
+[
+	{
+		"identifier" : "high_temprature",
+		"type" : "alert",
+		"outputData":
+		[
+			{
+				"identifier" : "temprature",
+		                "dataType":{
+		                    "type":"int",
+		                    "specs":{
+							"max":"255",
+							"min":"0",
+							"unit":""
+		                    }
+		                }
+			}
+		],
+		"desc" : "高温告警"
+	}
+]
+}

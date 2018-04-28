@@ -2,7 +2,7 @@
 
 ### 介绍
 
-本 SDK 根据阿里云IoT LinkEdge WebSocket接入协议，屏蔽了协议的封装和解析细节，并整合了一款刚广泛应用的websocket库，方便开发者快速接入.
+本 SDK 根据阿里云IoT LinkEdge WebSocket接入协议，屏蔽了协议的封装和解析细节，并整合了一款广泛应用的websocket库，方便开发者快速接入.
 
 ### 通讯协议
 
